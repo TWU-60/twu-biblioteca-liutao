@@ -1,6 +1,8 @@
-package com.twu.biblioteca;
+package com.twu.biblioteca.bibliotecaitems;
 
 import java.io.PrintStream;
+
+import com.twu.biblioteca.bibliotecaitems.Book;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -21,23 +23,23 @@ public class BookTest {
     }
 
     @Test
-    public void getTitleShouldRetrieveBookAuthor() {
+    public void getAuthorShouldRetrieveBookAuthor() {
         assertEquals("Nick Hornby", book.getAuthor());
     }
 
     @Test
-    public void getTitleShouldRetrieveBookYear() {
+    public void getYearShouldRetrieveBookYear() {
         assertEquals(1995, book.getYear());
     }
 
     @Test
-    public void isEqualToShouldReturnTrueIfTheBookPassedHasArgumentHaveTheSameProperties() {
+    public void isEqualToShouldReturnTrueIfTheBookPassedAsArgumentHaveTheSameProperties() {
         Book equalBook = new Book("High Fidelity", "Nick Hornby", 1995);
         assertTrue(book.isEqualTo(equalBook));
     }
 
     @Test
-    public void isEqualToShouldReturnFalseIfTheBookPassedHasArgumentHaveDifferentProperties() {
+    public void isEqualToShouldReturnFalseIfTheBookPassedAsArgumentHaveDifferentProperties() {
         Book differentBook = new Book("The Divine Comedy", "Dante Alighieri", 1320);
         assertFalse(book.isEqualTo(differentBook));
     }
@@ -49,10 +51,21 @@ public class BookTest {
     }
 
     @Test
+    public void giveBackShouldReturnACheckedOutBookMessage() {
+        assertEquals("Thank you! Enjoy the book", book.checkOut());
+    }
+
+    @Test
     public void giveBackShouldResetTheStatusOfTheBookAsCheckedOut() {
         book.checkOut();
         book.giveBack();
         assertFalse(book.isCheckedOut());
+    }
+
+    @Test
+    public void giveBackShouldReturnAReturnedBookMessage() {
+        book.checkOut();
+        assertEquals("Thank you for returning the book.", book.giveBack());
     }
 
     @Test
