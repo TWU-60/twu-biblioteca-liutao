@@ -3,38 +3,135 @@
 WELCOME TO BIBLIOTECA
 
 MAIN MENU
-- List Books
-- Check Out
-- Return
-- Quit
+ - List Books [LB]
+ - List Movies [LM]
+ - Sign In [SI]
+ - Quit [Q]
 
-Enter a menu option command (first letter/s): LB
+Enter a menu command option: SI
+Enter your library number: 123-4567
+Enter your password: password1
+Logged in successfully
+
+MAIN MENU
+ - List Books [LB]
+ - List Movies [LM]
+ - Check Out Book [COB]
+ - Check Out Movie [COM]
+ - Return Book [RB]
+ - Return Movie [RM]
+ - Sign Out [SO]
+ - User Details [UD]
+ - Quit [Q]
+
+Enter a menu command option: UD
+USER PROFILE DETAILS
+Name: TT
+Email: hello@hah.com
+Phone: +44 0123 456789
+
+MAIN MENU
+ - List Books [LB]
+ - List Movies [LM]
+ - Check Out Book [COB]
+ - Check Out Movie [COM]
+ - Return Book [RB]
+ - Return Movie [RM]
+ - Sign Out [SO]
+ - User Details [UD]
+ - Quit [Q]
+
+Enter a menu command option: LB
 High Fidelity                  Nick Hornby                    1995
 The Divine Comedy              Dante Alighieri                1320
 The Decameron                  Giovanni Boccaccio             1353
 
-Enter a menu option command (first letter/s): CO
-Enter the title: The Divine Comedy
-Enter the author: Dante Alighieri
-Enter the year: 1320
+MAIN MENU
+ - List Books [LB]
+ - List Movies [LM]
+ - Check Out Book [COB]
+ - Check Out Movie [COM]
+ - Return Book [RB]
+ - Return Movie [RM]
+ - Sign Out [SO]
+ - User Details [UD]
+ - Quit [Q]
+
+Enter a menu command option: COB
+Enter title: The Divine Comedy
+Enter author: Dante Alighieri
+Enter year: 1320
 Thank you! Enjoy the book
 
-Enter a menu option command (first letter/s): LB
+MAIN MENU
+ - List Books [LB]
+ - List Movies [LM]
+ - Check Out Book [COB]
+ - Check Out Movie [COM]
+ - Return Book [RB]
+ - Return Movie [RM]
+ - Sign Out [SO]
+ - User Details [UD]
+ - Quit [Q]
+
+Enter a menu command option: LB
 High Fidelity                  Nick Hornby                    1995
 The Decameron                  Giovanni Boccaccio             1353
 
-Enter a menu option command (first letter/s): R
-Enter the title: The Divine Comedy
-Enter the author: Dante Alighieri
-Enter the year: 1320
+MAIN MENU
+ - List Books [LB]
+ - List Movies [LM]
+ - Check Out Book [COB]
+ - Check Out Movie [COM]
+ - Return Book [RB]
+ - Return Movie [RM]
+ - Sign Out [SO]
+ - User Details [UD]
+ - Quit [Q]
+
+Enter a menu command option: RB
+Enter title: The Divine Comedy
+Enter author: Dante Alighieri
+Enter year: 1320
 Thank you for returning the book.
 
-Enter a menu option command (first letter/s): LB
+MAIN MENU
+ - List Books [LB]
+ - List Movies [LM]
+ - Check Out Book [COB]
+ - Check Out Movie [COM]
+ - Return Book [RB]
+ - Return Movie [RM]
+ - Sign Out [SO]
+ - User Details [UD]
+ - Quit [Q]
+
+Enter a menu command option: LB
 High Fidelity                  Nick Hornby                    1995
 The Divine Comedy              Dante Alighieri                1320
 The Decameron                  Giovanni Boccaccio             1353
 
-Enter a menu option command (first letter/s): Q
+MAIN MENU
+ - List Books [LB]
+ - List Movies [LM]
+ - Check Out Book [COB]
+ - Check Out Movie [COM]
+ - Return Book [RB]
+ - Return Movie [RM]
+ - Sign Out [SO]
+ - User Details [UD]
+ - Quit [Q]
+
+Enter a menu command option: SO
+Logged out successfully
+
+MAIN MENU
+ - List Books [LB]
+ - List Movies [LM]
+ - Sign In [SI]
+ - Quit [Q]
+
+Enter a menu command option: Q
 ```
 
 ## Business Case
@@ -106,4 +203,31 @@ UNSUCCESSFUL RETURN
 As a customer,
 I would like to be notified if the book I am returning has not been added to this library by seeing the message “That is not a valid book to return.”,
 so that I can return it to the correct library or fix my spelling error.
+```
+
+## User Stories (Release 2)
+```
+LIST MOVIES
+As a customer,
+I would like to see a list of available movies,
+so that I can browse for a movie that I might check-out.
+Movies have a name, year, director and movie rating (from 1-10 or unrated).
+
+CHECKOUT MOVIE
+As a customer,
+I would like to check out a movie from the library,
+so I can enjoy it at home.
+
+USER ACCOUNTS - LOGIN
+As a librarian,
+I want to know who has checked out a book,
+so that I can hold them accountable for returning it.
+Users must now login using their library number (which is in the format xxx-xxxx) and a password in order to check-out and return books.
+User credentials are predefined, so registering new users is not part of this story.
+
+USER ACCOUNTS - USER INFORMATION
+As a customer,
+I want to be able to see my user information (name, email address and phone number),
+so that I know that the library can contact me.
+This option should only be available when the customer is logged in and should only display that customer’s information.
 ```

@@ -1,24 +1,24 @@
 package com.twu.biblioteca.menuoptions;
 
-import com.twu.biblioteca.BookLister;
+import com.twu.biblioteca.user.UserManager;
+import com.twu.biblioteca.itemlisters.ItemLister;
 
-public class ReturnOption implements MenuItem {
+public class ReturnOption extends MenuItemBase implements MenuItem {
 
-    private String optionName;
-    private BookLister bookLister;
+    private ItemLister itemLister;
+    private UserManager userManager;
 
-    public ReturnOption(String name, BookLister bl) {
-        optionName = name;
-        bookLister = bl;
+    public ReturnOption(String name, ItemLister il, UserManager um) {
+        super(name);
+        itemLister = il;
+        userManager = um;
     }
 
     @Override
-    public String getName() {
-        return optionName;
+    public void run() {
+        itemLister.giveBack(userManager.getCurrentUser());
     }
 
     @Override
-    public void run(){
-        bookLister.giveBack();
-    }
+    public boolean showWhenLoggedInOnly() { return true; }
 }

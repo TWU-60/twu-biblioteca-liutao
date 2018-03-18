@@ -1,20 +1,13 @@
 package com.twu.biblioteca.menuoptions;
 
-public class QuitOption implements MenuItem {
+public class QuitOption extends MenuItemBase implements MenuItem {
 
     private String optionName;
 
     public QuitOption(String name) {
-        optionName = name;
+        super(name);
     }
 
     @Override
-    public String getName() {
-        return optionName;
-    }
-
-    @Override
-    public void run() {
-        System.exit(0);
-    }
+    public void run() { System.exit(0); }
 }

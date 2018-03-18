@@ -1,24 +1,18 @@
 package com.twu.biblioteca.menuoptions;
 
-import com.twu.biblioteca.BookLister;
+import com.twu.biblioteca.itemlisters.ItemLister;
 
-public class ListOption implements MenuItem {
+public class ListOption extends MenuItemBase implements MenuItem {
 
-    private String optionName;
-    private BookLister bookLister;
+    private ItemLister itemLister;
 
-    public ListOption(String name, BookLister bl) {
-        optionName = name;
-        bookLister = bl;
+    public ListOption(String name, ItemLister il) {
+        super(name);
+        itemLister = il;
     }
 
     @Override
-    public String getName() {
-        return optionName;
-    }
-
-    @Override
-    public void run(){
-        bookLister.listBooks();
+    public void run() {
+        itemLister.listItems();
     }
 }

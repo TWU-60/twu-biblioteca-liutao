@@ -1,8 +1,8 @@
 package com.twu.biblioteca.menuoptions;
 
 public interface MenuItem {
-
-    public String getName();
-    public void run();
-
+    String getName();
+    void run();
+    boolean showWhenLoggedInOnly();
+    boolean showWhenLoggedOutOnly();
 }
